@@ -1,4 +1,3 @@
-import React from "react";
 
 import ContactForm from "./ContactForm";
 //import ContactSocial from "../components/ContactSocial";

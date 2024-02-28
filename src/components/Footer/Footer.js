@@ -1,9 +1,7 @@
-import React from "react";
 import logo3 from "../Navbar/logo2-removebg-preview.png";
 
 import {
   FooterContainer,
- 
   FooterLinksContainer,
   FooterLinksWrapper,
   FooterLinkItems,
@@ -12,14 +10,10 @@ import {
   SocialMedia,
   SocialMediaWrap,
   SocialLogo,
-  
   WebsiteRights,
- 
 } from "./Footer.elements";
 
 function Footer() {
- 
-
   return (
     <FooterContainer>
       {/* <FooterSubscription>
@@ -119,6 +113,7 @@ function Footer() {
           </SocialLogo>
           <WebsiteRights>
             © Copyright 2021 Ananya cocopeat exports. All Rights Reserved{" "}
+            <br></br>Developed by <a>GokZ465</a>{" "}
           </WebsiteRights>
           {/* <SocialIcons>
             <SocialIconLink href="/" target="_blank" aria-label="Facebook">

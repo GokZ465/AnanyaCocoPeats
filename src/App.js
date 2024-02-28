@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyles from "./globalStyles";
 import { Navbar, Footer } from "./components";
@@ -34,7 +34,7 @@ function App() {
           <Route path="/products" component={FaqSection} />
           <Route path="/contact" component={ContactUs} />
           <Route component={NotFoundPage} />{" "}
-          {/* This route will be matched when no other routes match */}
+          
         </Switch>
 
         <Footer />

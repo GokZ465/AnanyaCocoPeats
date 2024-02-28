@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import React from "react";
 
 const slideStyles = {
   width: "100%",

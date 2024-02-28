@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Layout, Description, ImageContainer } from "./styles";
 // Animation

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo3 from "./logo2-removebg-preview.png";
+import whatsappLogo from "../../images/whatsapp-logo.svg";
 import {
   Nav,
   NavbarContainer,
@@ -41,8 +42,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
-    // so if the screensize is <= 960px then set button state to false
-    if (window.innerwidth <= 960) {
+    if (window.innerWidth <= 960) {
       setButton(false);
     } else {
       setButton(true);
@@ -67,10 +67,7 @@ function Navbar() {
                 width="500px"
                 height="560px"
                 className="hide-bg"
-                // style={{ width: "100%" , height: "100%", paddingBottom:'0.5rem' , fill:'white' }}
                 style={{
-                  // mixBlendMode: "multiply",
-                  // webkitFilter: "contrast(1)",
                   width: "100%",
                   height: "100%",
                   paddingBottom: "0.5rem",
@@ -79,9 +76,6 @@ function Navbar() {
                 }}
               />
             </div>
-            {/* <NavLogo to='/'> 
-                        <NavIcon /> Ananya Cocopeat
-                    </NavLogo> */}
             <HamburgerIcon onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </HamburgerIcon>
@@ -91,9 +85,14 @@ function Navbar() {
                   Home
                 </NavLinks>
               </NavItem>
-              <NavLinks to="/Products" onClick={closeMobileMenu}>
-                Products
-              </NavLinks>
+              <NavItem
+                onClick={handleProductsClick}
+                productsClick={productsClick}
+              >
+                <NavLinks to="/Products" onClick={closeMobileMenu}>
+                  Products
+                </NavLinks>
+              </NavItem>
               <NavItem
                 onClick={handleServicesClick}
                 servicesClick={servicesClick}
@@ -111,24 +110,42 @@ function Navbar() {
                 </NavLinks>
               </NavItem>
 
-              <NavItem
-                onClick={handleProductsClick}
-                productsClick={productsClick}
-              ></NavItem>
-
-              <NavItemBtn>
-                {/* {button ? (
-                  <NavBtnLink to="/sign-up">
-                    <Button primary>SIGN UP</Button>
-                  </NavBtnLink>
-                ) : (
-                  <NavBtnLink to="/sign-up">
-                    <Button onClick={closeMobileMenu} fontBig primary>
-                      SIGN UP
-                    </Button>
-                  </NavBtnLink>
-                )} */}
-              </NavItemBtn>
+              <NavItem>
+                <NavLinks
+                  href="https://api.whatsapp.com/send?phone=917550055871&text=Hello%20there!"
+                  target="_blank"
+                  style={{
+                    textDecoration: "none",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <a
+                    href="https://api.whatsapp.com/send?phone=917550055871&text=Hello%20there!"
+                    target="_blank"
+                    style={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <img
+                      href="https://api.whatsapp.com/send?phone=917550055871&text=Hello%20there!"
+                      target="_blank"
+                      src={whatsappLogo}
+                      alt="WhatsApp Logo"
+                      style={{
+                        width: "24px",
+                        marginRight: "8px",
+                        filter:
+                          "invert(94%) sepia(95%) saturate(2%) hue-rotate(243deg) brightness(105%) contrast(100%) ",
+                      }}
+                    />
+                    Get in Touch
+                  </a>
+                </NavLinks>
+              </NavItem>
             </NavMenu>
           </NavbarContainer>
         </Nav>

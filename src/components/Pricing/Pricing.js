@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "../../globalStyles";
 import { IconContext } from "react-icons/lib";
 import image1 from "./section3_home/5.jpg";

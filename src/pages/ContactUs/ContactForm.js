@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
-
+import whatsappLogo from "../../images/whatsapp-logo.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 // Animations
 import { motion } from "framer-motion";
 import {
@@ -120,6 +122,13 @@ const FormContainer = styled.form`
   }
 `;
 
+const PhoneUsContainer = styled.a`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+`;
+
 const ContactForm = () => {
   const form = useRef(null);
   const history = useHistory();
@@ -149,9 +158,7 @@ const ContactForm = () => {
       initial="hidden"
       animate="show"
       exit="exit"
-      onSubmit={(e) => {
-        sendEmail(e);
-      }}
+      onSubmit={(e) => sendEmail(e)}
     >
       <FormTitle variants={titleAnimation}>
         <Hide>
@@ -164,11 +171,67 @@ const ContactForm = () => {
             meet and exceed your expectations. Please feel free to contact us
             with any questions or inquiries.
           </motion.p>
+          <a
+            href="https://api.whatsapp.com/send?phone=917550055871&text=Hello%20there!"
+            target="_blank"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              href="https://api.whatsapp.com/send?phone=917550055871&text=Hello%20there!"
+              target="_blank"
+              src={whatsappLogo}
+              alt="WhatsApp Logo"
+              style={{
+                width: "54px",
+                marginRight: "38px",
+                backgroundColor: "#179b6b",
+                borderRadius: "20%",
+                margin: "0px",
+                marginTop: "1rem",
+              }}
+            />
+            <h3
+              style={{
+                caretColorolor: "#179b6b",
+                padding: "10px",
+                borderRadius: "20%",
+                fontSize: "1.5rem",
+              }}
+            >
+              WhatsApp
+            </h3>
+          </a>
+
+          <PhoneUsContainer href="tel:+917550055871">
+            <FontAwesomeIcon
+              icon={faPhone}
+              style={{
+                width: "54px",
+                height: "54px",
+                borderRadius: "20%",
+                margin: "0px",
+                marginTop: "1rem",
+              }}
+            />
+            <h3
+              style={{
+                padding: "10px",
+                borderRadius: "20%",
+                fontSize: "1.5rem",
+              }}
+            >
+              Phone Us
+            </h3>
+          </PhoneUsContainer>
         </Hide>
       </FormTitle>
-      <FormContainer>
+      <FormContainer onSubmit={(e) => sendEmail(e)}>
         <label>
-          {" "}
           Your name <span>&#42;</span>
         </label>
         <input
@@ -180,7 +243,6 @@ const ContactForm = () => {
         />
 
         <label>
-          {" "}
           Your email <span>&#42;</span>
         </label>
         <input

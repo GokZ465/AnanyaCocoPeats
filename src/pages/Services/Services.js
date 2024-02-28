@@ -1,4 +1,3 @@
-import React from "react";
 import { InfoSection, Pricing } from "../../components";
 import { homeObjOne, homeObjFive, homeObjThree } from "./Data";
 import { AnimatePresence, motion } from "framer-motion";
