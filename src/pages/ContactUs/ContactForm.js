@@ -130,22 +130,27 @@ const PhoneUsContainer = styled.a`
 `;
 
 const ContactForm = () => {
+  const emailJS_template = process.env.REACT_APP_emailJS_template;
+  const emailJS_service = process.env.REACT_APP_emailJS_service;
+  const emailJS_secret = process.env.REACT_APP_emailJS_secret;
+
   const form = useRef(null);
   const history = useHistory();
   const sendEmail = (e) => {
     e.preventDefault();
-    const formElement = e.target; // Get the form element from the event
+    const formElement = e.target;
 
     emailjs
       .sendForm(
-        "service_e01w5yc",
-        "template_ljpn1xs",
-        formElement, // Pass the form element here
-        "os0DqSxeYI3huB3Y3"
+        emailJS_service,
+        emailJS_template,
+
+        formElement,
+        emailJS_secret
       )
       .then((result) => {
         console.log(result.text);
-        history.push("/"); // Push the user back to the home ("/") route
+        history.push("/");
       })
       .catch((error) => {
         console.log(error.text);
