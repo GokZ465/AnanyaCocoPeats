@@ -34,7 +34,6 @@ function App() {
           <Route path="/products" component={FaqSection} />
           <Route path="/contact" component={ContactUs} />
           <Route component={NotFoundPage} />{" "}
-          
         </Switch>
 
         <Footer />
